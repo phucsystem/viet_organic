@@ -1,0 +1,16 @@
+{
+  "transport": "ftp",
+  "uploadOnSave": true,
+  "useAtomicWrites": true,
+  "deleteLocal": true,
+  "hostname": "103.234.36.66",
+  "port": "21",
+  "target": "public_html/organic",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "sannha",
+  "password": "yn1EXvSdcRBl",
+  "watch": []
+}

@@ -12,7 +12,7 @@ class ControllerCommonHeader extends Controller {
 			if ($this->config->get($analytic['code'] . '_status')) {
 				$data['analytics'][] = $this->load->controller('extension/analytics/' . $analytic['code'], $this->config->get($analytic['code'] . '_status'));
 			}
-		}
+		}			 
 
 		if ($this->request->server['HTTPS']) {
 			$server = $this->config->get('config_ssl');
@@ -26,7 +26,7 @@ class ControllerCommonHeader extends Controller {
 
 		$data['title'] = $this->document->getTitle();
 
-		$data['base'] = $server;
+		$data['base'] = $server;		 
 		$data['description'] = $this->document->getDescription();
 		$data['keywords'] = $this->document->getKeywords();
 		$data['links'] = $this->document->getLinks();
@@ -34,8 +34,9 @@ class ControllerCommonHeader extends Controller {
 		$data['scripts'] = $this->document->getScripts();
 		$data['lang'] = $this->language->get('code');
 		$data['direction'] = $this->language->get('direction');
-
 		$data['name'] = $this->config->get('config_name');
+
+		
 
 		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
 			$data['logo'] = $server . 'image/' . $this->config->get('config_logo');
@@ -46,7 +47,6 @@ class ControllerCommonHeader extends Controller {
 		$this->load->language('common/header');
 
 		$data['text_home'] = $this->language->get('text_home');
-
 		// Wishlist
 		if ($this->customer->isLogged()) {
 			$this->load->model('account/wishlist');
@@ -54,8 +54,7 @@ class ControllerCommonHeader extends Controller {
 			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
 		} else {
 			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
-		}
-
+		}	
 		$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
 
@@ -69,6 +68,9 @@ class ControllerCommonHeader extends Controller {
 		$data['text_checkout'] = $this->language->get('text_checkout');
 		$data['text_category'] = $this->language->get('text_category');
 		$data['text_all'] = $this->language->get('text_all');
+		$data['text_blog'] = $this->language->get('text_blog');
+		$data['text_contact'] = $this->language->get('text_contact');
+		$data['all_blogs'] = $this->url->link('information/blogger/blogs');
 
 		$data['home'] = $this->url->link('common/home');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
@@ -84,6 +86,19 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
+		$data['mytemplate'] = $this->config->get('theme_default_directory');
+		
+		$type="module";
+				
+		$this->load->model('extension/extension');
+				
+		$result=$this->model_extension_extension->getExtensions($type);
+			
+		foreach($result as $result){
+				if($result['code']==="blogger"){
+						$data['blog_enable'] =1;
+			  }
+		}
 
 		// Menu
 		$this->load->model('catalog/category');
@@ -107,8 +122,27 @@ class ControllerCommonHeader extends Controller {
 						'filter_sub_category' => true
 					);
 
+					/* 2 Level Sub Categories START */
+					$childs_data = array();
+					$child_2 = $this->model_catalog_category->getCategories($child['category_id']);
+
+					foreach ($child_2 as $childs) {
+						$filter_data = array(
+							'filter_category_id'  => $childs['category_id'],
+							'filter_sub_category' => true
+						);
+
+						$childs_data[] = array(
+							'name'  => $childs['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+							'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'] . '_' . $childs['category_id'])
+						);
+					}
+					/* 2 Level Sub Categories END */
+
 					$children_data[] = array(
 						'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+						'childs' => $childs_data,
+						'column'   => $child['column'] ? $child['column'] : 1,
 						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
 					);
 				}
@@ -122,11 +156,12 @@ class ControllerCommonHeader extends Controller {
 				);
 			}
 		}
-
+				
 		$data['language'] = $this->load->controller('common/language');
 		$data['currency'] = $this->load->controller('common/currency');
 		$data['search'] = $this->load->controller('common/search');
 		$data['cart'] = $this->load->controller('common/cart');
+		$data['headertop'] = $this->load->controller('common/headertop');	
 
 		// For page specific css
 		if (isset($this->request->get['route'])) {
@@ -146,7 +181,12 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$data['class'] = 'common-home';
 		}
+		
+		
+		$data['column_left'] = $this->load->controller('common/column_left');
+		$data['column_right'] = $this->load->controller('common/column_right');		
 
 		return $this->load->view('common/header', $data);
+		
 	}
 }
