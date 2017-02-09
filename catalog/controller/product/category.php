@@ -37,6 +37,7 @@ class ControllerProductCategory extends Controller {
 			$limit = (int)$this->request->get['limit'];
 		} else {
 			$limit = $this->config->get($this->config->get('config_theme') . '_product_limit');
+	
 		}
 
 		$data['breadcrumbs'] = array();
@@ -185,6 +186,19 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
 				}
+				
+				//added for image swap
+				
+				$images = $this->model_catalog_product->getProductImages($result['product_id']);
+
+				if(isset($images[0]['image']) && !empty($images)){
+				 $images = $images[0]['image']; 
+				   }else
+				   {
+				   $images = $image;
+				   }
+				    
+				//
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 					$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
@@ -213,6 +227,7 @@ class ControllerProductCategory extends Controller {
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
+					'thumb_swap'  => $this->model_tool_image->resize($images, $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height')),
 					'name'        => $result['name'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
@@ -220,7 +235,8 @@ class ControllerProductCategory extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $result['rating'],
-					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
+					'quick'        => $this->url->link('product/quick_view','&product_id=' . $result['product_id']),
 				);
 			}
 
