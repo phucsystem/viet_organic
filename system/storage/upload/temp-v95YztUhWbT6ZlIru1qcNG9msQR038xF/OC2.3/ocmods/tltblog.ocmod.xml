@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <code>tltblog-4.0-OC2.3</code>
+    <name>TLT Blog for Opencart 2.3.x</name>
+    <version>4.0-OC2.3</version>
+    <author>Taiwanleaftea.com</author>
+    <link>http://taiwanleaftea.com</link>
+    <file path="admin/controller/common/column_left.php">
+        <operation>
+            <search trim="true" index="0"><![CDATA[
+			if ($catalog) {
+            ]]></search>
+            <add position="before" trim="false" offset="0"><![CDATA[
+			$tltblog = array();
+			
+			if ($this->user->hasPermission('access', 'tltblog/tltblog')) {
+				$tltblog[] = array(
+					'name'     => $this->language->get('text_tltblog'),
+					'href'     => $this->url->link('tltblog/tltblog', 'token=' . $this->session->data['token'], true),
+					'children' => array()	
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'tltblog/tlttag')) {
+				$tltblog[] = array(
+					'name'	   => $this->language->get('text_tlttag'),
+					'href'     => $this->url->link('tltblog/tlttag', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($tltblog) {
+				$catalog[] = array(
+					'name'	   => $this->language->get('text_tltblog_parent'),
+					'href'     => '',
+					'children' => $tltblog
+				);
+			}
+			
+            ]]></add>
+        </operation>
+    </file>  
+    <file path="admin/language/en-gb/common/column_left.php">
+        <operation>
+            <search trim="true" index="0"><![CDATA[
+$_['text_information']               = 'Information';
+			]]></search>
+            <add position="after" trim="false" offset="0"><![CDATA[
+$_['text_tltblog_parent']              = 'TLT Blog';
+$_['text_tltblog']                     = 'Articles';
+$_['text_tlttag']                      = 'Tags';
+			]]></add>
+        </operation>
+    </file>  
+</modification>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <code>tltblog-seo-4-OC2.3</code>
+    <name>TLT Blog SEO Url modification</name>
+    <version>4.0-OC2.3</version>
+    <author>Taiwanleaftea.com</author>
+    <link>http://taiwanleaftea.com</link>
+    <file path="catalog/controller/startup/seo_url.php">
+        <operation>
+            <search trim="true" index="0"><![CDATA[$this->request->get['route'] = 'error/not_found';]]></search>
+            <add position="replace" trim="false" offset="0"><![CDATA[$this->request->get['route'] = 'tltblog/tltblog_seo';]]></add>
+        </operation>
+    </file>  
+</modification>
