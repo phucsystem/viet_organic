@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://organic.phucsystem.com/admin/');
-define('HTTP_CATALOG', 'http://organic.phucsystem.com/');
+define('HTTP_SERVER', 'http://vietorganicshop.com/admin/');
+define('HTTP_CATALOG', 'http://vietorganicshop.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://organic.phucsystem.com/admin/');
-define('HTTPS_CATALOG', 'http://organic.phucsystem.com/');
+define('HTTPS_SERVER', 'http://vietorganicshop.com/admin/');
+define('HTTPS_CATALOG', 'http://vietorganicshop.com/');
 
 // DIR
 define('DIR_APPLICATION', '/home/sannha/public_html/organic/admin/');

@@ -216,7 +216,7 @@ header {
     color: #88bb22;
 }
 #top{
-background: #f2f2f2;
+background: #88bb22;
 }
 #top .container {
 	padding:0;
@@ -1510,13 +1510,23 @@ h2.price {
     opacity:0;
 }
 .product-thumb .price {
-	color: #000000;
-	font-size:17px;
+	color: #88bb22;
+	font-size:25px;
 	font-weight:700;
 	padding-bottom:15px;
 	margin:0;
 	display:inline-block;
 }
+
+.product-thumb .product-name {
+	color: black;
+	font-size:20px;
+	font-weight:700;
+	padding-bottom:15px;
+	margin:0;
+	display:inline-block;
+}
+
 #column-left .product-thumb .price-new , #column-right .product-thumb .price-new {
 	font-weight: normal;
 }
@@ -1570,7 +1580,7 @@ h2.price {
     border: medium none;
     color: #ffffff;
     font-weight: 600;
-	font-size:13px;
+	font-size:20px;
     padding: 6px 15px;
     transition-duration: 500ms;
 	text-transform: uppercase;
@@ -1981,13 +1991,12 @@ color:#d9d9d9;
     padding: 10px 0;
     text-transform: uppercase;*/
 
-	background-color: #f2f2f2;
-    color: #524c3d;
+	background-color: #88bb22;
+    color: white;
     cursor: pointer;
     font-weight:600;
 	font-size:14px;
     margin: 0;
-    padding: 9px 10px;
     text-transform: uppercase;
 }
 .box .box-content {
@@ -2025,9 +2034,9 @@ color:#d9d9d9;
 .related .related-products .customNavigation a.next{right:-8px}
 
 #content .box .box-heading , #content .box.related .box-heading {
-	background-color: #f2f2f2;
+	background-color: #88bb22;
     border: medium none;
-    color: #4c4c4c;
+    color: white;
     font-weight:700;
 	font-size:14px;
     margin: 0;
@@ -2112,7 +2121,7 @@ content: "\f068";
 	/*z-index:999;*/
 }
 #producttab .hometab .etabs::before ,#content .box .box-heading:before {
-    background: #e5e5e5 none repeat scroll 0 0;
+    background: #e5e5e5© none repeat scroll 0 0;
     content: "";
     font-family: fontawesome;
     height: 1px;
@@ -5284,3 +5293,10 @@ content: "\f107";
 #accordion .col-sm-10 {width: 75%;}
 #accordion .form-horizontal .control-label {text-align:left;}
 <!-- Megnor www.templatemela.com - End -->
+
+
+.titel-selected{
+    background:#88bb22 !important;
+    border-left:none;
+    color: #fff !important;
+}

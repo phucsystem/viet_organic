@@ -2,7 +2,8 @@
 class ControllerExtensionModulemegnortabs extends Controller {
 	public function index($setting) {
 		$this->load->language('extension/module/megnortabs');
-			
+		$this->load->language('extension/module/latest');
+
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_tax'] = $this->language->get('text_tax');
@@ -10,7 +11,7 @@ class ControllerExtensionModulemegnortabs extends Controller {
 		$data['button_cart'] = $this->language->get('button_cart');
 		$data['button_wishlist'] = $this->language->get('button_wishlist');
 		$data['button_compare'] = $this->language->get('button_compare');
-		
+
 		$data['tab_latest'] = $this->language->get('tab_latest');
       	$data['tab_featured'] = $this->language->get('tab_featured');
       	$data['tab_bestseller'] = $this->language->get('tab_bestseller');
@@ -20,7 +21,7 @@ class ControllerExtensionModulemegnortabs extends Controller {
 		$this->load->model('tool/image');
 
 		// special product
-		
+
 		$data['specialproducts'] = array();
 
 		$filter_data = array(
@@ -39,18 +40,18 @@ class ControllerExtensionModulemegnortabs extends Controller {
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 				}
-				
+
 				//added for image swap
-				
+
 				$images = $this->model_catalog_product->getProductImages($result['product_id']);
 
 				if(isset($images[0]['image']) && !empty($images)){
-				 $images = $images[0]['image']; 
+				 $images = $images[0]['image'];
 				   }else
 				   {
 				   $images = $image;
 				   }
-				    
+
 				//
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
@@ -91,11 +92,11 @@ class ControllerExtensionModulemegnortabs extends Controller {
 					'quick'        => $this->url->link('product/quick_view','&product_id=' . $result['product_id'])
 				);
 			}
-			
+
 		}
-		
+
 		//latest product
-		
+
 		$data['latestproducts'] = array();
 
 		$filter_data = array(
@@ -114,13 +115,13 @@ class ControllerExtensionModulemegnortabs extends Controller {
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 				}
-				
+
 				//added for image swap
-				
+
 				$images = $this->model_catalog_product->getProductImages($result['product_id']);
 
 				if(isset($images[0]['image']) && !empty($images)){
-				 $images = $images[0]['image']; 
+				 $images = $images[0]['image'];
 				   }else
 				   {
 				   $images = $image;
@@ -167,9 +168,9 @@ class ControllerExtensionModulemegnortabs extends Controller {
 				);
 			}
 		}
-		
+
 		// bestsellets
-		
+
 		$data['bestsellersproducts'] = array();
 
 		$results = $this->model_catalog_product->getBestSellerProducts($setting['limit']);
@@ -181,13 +182,13 @@ class ControllerExtensionModulemegnortabs extends Controller {
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 				}
-				
+
 				//added for image swap
-				
+
 				$images = $this->model_catalog_product->getProductImages($result['product_id']);
 
 				if(isset($images[0]['image']) && !empty($images)){
-				 $images = $images[0]['image']; 
+				 $images = $images[0]['image'];
 				   }else
 				   {
 				   $images = $image;
@@ -235,8 +236,8 @@ class ControllerExtensionModulemegnortabs extends Controller {
 			}
 		}
 
-	
-	
-			return $this->load->view('extension/module/megnortabs', $data); 
+
+
+			return $this->load->view('extension/module/megnortabs', $data);
 	}
 }

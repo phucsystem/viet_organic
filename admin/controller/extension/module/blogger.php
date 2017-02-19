@@ -268,13 +268,14 @@ class ControllerExtensionModuleBlogger extends Controller {
 	}
 
 	protected function validate() {
+
 		if (!$this->user->hasPermission('modify', 'extension/module/blogger')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
-		if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 64)) {
-			$this->error['name'] = $this->language->get('error_name');
-		}
+		// if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 64)) {
+		// 	$this->error['name'] = $this->language->get('error_name');
+		// }
 
 		if (!$this->request->post['width']) {
 			$this->error['width'] = $this->language->get('error_width');
@@ -384,7 +385,7 @@ class ControllerExtensionModuleBlogger extends Controller {
 
 	protected function getForm() {
 		$data['heading_title'] = $this->language->get('heading_title');
-		
+
 		$data['text_form'] = !isset($this->request->get['blogger_id']) ? $this->language->get('text_add') : $this->language->get('text_form');
 		$data['text_default'] = $this->language->get('text_default');
 		$data['text_enabled'] = $this->language->get('text_enabled');
@@ -450,7 +451,7 @@ class ControllerExtensionModuleBlogger extends Controller {
 				'href' => $this->url->link('extension/module/blogger', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], true)
 			);
 		}
-		
+
 		if (!isset($this->request->get['blogger_id'])) {
 			$data['action'] = $this->url->link('extension/module/blogger/add', 'token=' . $this->session->data['token'], true);
 		} else {
@@ -553,9 +554,9 @@ class ControllerExtensionModuleBlogger extends Controller {
 		}
 
 		foreach ($this->request->post['blogger_description'] as $language_id => $value) {
-			if ((utf8_strlen($value['title']) < 3) || (utf8_strlen($value['title']) > 64)) {
-				$this->error['title'][$language_id] = $this->language->get('error_title');
-			}
+			// if ((utf8_strlen($value['title']) < 3) || (utf8_strlen($value['title']) > 64)) {
+			// 	$this->error['title'][$language_id] = $this->language->get('error_title');
+			// }
 
 			if (utf8_strlen($value['description']) < 3) {
 				$this->error['description'][$language_id] = $this->language->get('error_description');

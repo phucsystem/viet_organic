@@ -4,7 +4,7 @@
 		$blogCount = sizeof($blogs);
 		$temp2 = 0;
   ?>
-  <div class="title-border"><div class="box-heading"><?php echo $heading_title; ?></div></div>
+  <div class="title-border"><div class="box-heading title-selected"><?php echo $heading_title; ?></div></div>
   <div class="box-content">
 
     <div class="box-product <?php if ($blogCount > $sliderFor){?> owl-carousel blogcarousel <?php }else{?>productbox-grid<?php }?>" id="<?php if ($blogCount >= $sliderFor){?>blog-carousel<?php }else{?>blog-grid<?php }?>">

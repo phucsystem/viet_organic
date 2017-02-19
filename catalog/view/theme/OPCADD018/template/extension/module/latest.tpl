@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
 <div class="box" id="latest">
- <div class="title-border"> <div class="box-heading"><?php echo $heading_title; ?></div></div>
+ <div class="title-border"> <div class="box-heading">xx<?php echo $heading_title; ?></div></div>
   <div class="box-content">
 	<!--<?php
 		$sliderFor = 5;
