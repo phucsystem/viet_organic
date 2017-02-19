@@ -31,7 +31,7 @@
     	  <div class="box">
 				<div class="box-content">
 					<?php
-						$sliderFor = 50;
+						$sliderFor = 10;
 						$productCount = sizeof($bestsellersproducts);
 					?>
 
@@ -133,7 +133,7 @@
 	<div class="box">
 				<div class="box-content">
 					<?php
-						$sliderFor = 50;
+						$sliderFor = 10;
 						$productCount = sizeof($latestproducts);
 					?>
 
@@ -235,7 +235,7 @@
 
 				<div class="box-content">
 					<?php
-						$sliderFor = 50;
+						$sliderFor = 10;
 						$productCount = sizeof($specialproducts);
 					?>
 

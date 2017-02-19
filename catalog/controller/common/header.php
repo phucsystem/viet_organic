@@ -136,14 +136,14 @@ class ControllerCommonHeader extends Controller {
 						);
 
 						$childs_data[] = array(
-							'name'  => $childs['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+							'name'  => $childs['name'],
 							'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'] . '_' . $childs['category_id'])
 						);
 					}
 					/* 2 Level Sub Categories END */
 
 					$children_data[] = array(
-						'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+						'name'  => $child['name'],
 						'childs' => $childs_data,
 						'column'   => $child['column'] ? $child['column'] : 1,
 						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
@@ -156,7 +156,7 @@ class ControllerCommonHeader extends Controller {
 					'filter_sub_category' => true
 				);
 
-				$children_data = $this->model_catalog_product->getProducts($filter_data);
+				// $children_data = $this->model_catalog_product->getProducts($filter_data);
 
 				// Level 1
 				$data['categories'][] = array(
@@ -174,6 +174,8 @@ class ControllerCommonHeader extends Controller {
 		$data['search'] = $this->load->controller('common/search');
 		$data['cart'] = $this->load->controller('common/cart');
 		$data['headertop'] = $this->load->controller('common/headertop');
+		$data['about_us_url'] = $this->url->link('information/information', 'information_id=4');
+		$data['contact_us_url'] = $this->url->link('information/contact');
 
 		// For page specific css
 		if (isset($this->request->get['route'])) {

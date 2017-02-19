@@ -111,6 +111,7 @@
 <?php $layoutclass = 'layout-1'; ?>
 <?php } ?>
 
+
 <body class="<?php echo $class;echo " " ;echo $layoutclass; ?>">
     <nav id="top">
         <div class="container">
@@ -120,31 +121,64 @@
 		<li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><span class="hidden-xs hidden-sm hidden-md checkout_span"><?php echo $text_checkout; ?></span></a></li> -->
                 </div>
                 <div id="top-links" class="nav pull-right">
-                    <!-- <ul class="list-inline">
-        <li class="dropdown myaccount"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"> <span class="account-toggle"><?php echo $text_account; ?></span></a>
-          <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
-            <?php if ($logged) { ?>
-            <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-            <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-            <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
-            <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
-            <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-            <?php } else { ?>
-            <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
-            <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
+                    <ul class="list-inline">
+                        <!-- <li class="dropdown myaccount">
+                            <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"> <span class="account-toggle"><?php echo $text_account; ?></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
+                                <?php if ($logged) { ?>
+                                <li>
+                                    <a href="<?php echo $account; ?>">
+                                        <?php echo $text_account; ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $order; ?>">
+                                        <?php echo $text_order; ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $transaction; ?>">
+                                        <?php echo $text_transaction; ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $download; ?>">
+                                        <?php echo $text_download; ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $logout; ?>">
+                                        <?php echo $text_logout; ?>
+                                    </a>
+                                </li>
+                                <?php } else { ?>
+                                <li>
+                                    <a href="<?php echo $register; ?>">
+                                        <?php echo $text_register; ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $login; ?>">
+                                        <?php echo $text_login; ?>
+                                    </a>
+                                </li>
 
-            <?php } ?>
-			<li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
-			<li><a href="<?php echo $checkout; ?>" id="checkout" title="<?php echo $text_checkout; ?>"><span class="hidden-xs hidden-sm hidden-md checkout_span"><?php echo $text_checkout; ?></span></a></li>
-			<!--<li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
-        	<li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
-			<li class="lang_cur_block">
-			<?php echo $language; ?>
-			<?php echo $currency; ?>
-			</li>
-          </ul>
-        </li>
-      </ul> -->
+                                <?php } ?>
+                                <li>
+                                    <a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a>
+                                </li>
+                                <li><a href="<?php echo $checkout; ?>" id="checkout" title="<?php echo $text_checkout; ?>"><span class="hidden-xs hidden-sm hidden-md checkout_span"><?php echo $text_checkout; ?></span></a></li>
+                                <li>
+                                    <a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a>
+                                </li>
+                                <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
+                                <li class="lang_cur_block">
+                                    <?php echo $language; ?>
+                                    <?php echo $currency; ?>
+                                </li>
+                            </ul>
+                        </li> -->
+                    </ul>
                 </div>
             </div>
             <div class="lang-cur">
@@ -228,61 +262,71 @@
                                 <?php echo $text_home; ?>
                             </a>
                         </li>
-                        <li class="top_level dropdown">
-                            <a href="/">
-                                <?php echo $text_product?>
-                            </a>
 
-                            <div class="dropdown-menu megamenu column3" style="">
-                                <div class="dropdown-inner">
 
-                                    <?php foreach ($categories as $category) { ?>
-                                    <ul class="list-unstyled childs_1">
-                                        <!-- 2 Level Sub Categories START -->
-                                        <li class="dropdown">
-                                            <a href="<?php echo $category['href']; ?>">
-                                                <?php echo $category['name']; ?>
-                                            </a>
+                            <li class="top_level dropdown"><a href="/>"><?php echo $text_product; ?></a></a>
+                                <div class="dropdown-menu megamenu column1" style="">
+                                    <div class="dropdown-inner">
+                                        <ul class="list-unstyled childs_1">
+                                          <?php foreach ($categories as $category) { ?>
+                                          <?php if ($category['children']) { ?>
+                                          <li class="dropdown">
+                                              <a href="<?php echo $category['href']; ?>">
+                                                  <?php echo $category['name']; ?>
+                                              </a>
 
-                                            <div class="dropdown-menu" style="">
-                                                <div class="dropdown-inner">
-                                                    <?php if ($category['children']) { ?>
-                                                    <ul class="list-unstyled childs_2">
-                                                      <?php foreach ($category['children'] as $child) {  ?>
-                                                          <li><a href="/index.php?route=product/product&product_id=<?php echo $child['product_id'] ?>"> <?php echo $child['name'] ?></a></li>
-                                                        <?php } ?>
-                                                    </ul>
-                                                    <?php } ?>
-                                                </div>
-                                            </div>
+                                              <?php $children =  $category['children'];?>
+
+                                              <!-- 2 Level Sub Categories START -->
+                                              <!-- 2 Level Sub Categories END -->
+                                              <!-- 2 Level Sub Categories START -->
+                                                  <div class="dropdown-menu" style="">
+                                                      <div class="dropdown-inner">
+                                                          <ul class="list-unstyled childs_2">
+                                                              <?php foreach ($children as $child) { ?>
+                                                                <li><a href="<?php echo $child['href']; ?>"> <?php echo $child['name']; ?></a></li>
+                                                              <?php } ?>
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              <!-- 2 Level Sub Categories END -->
+                                          </li>
+
+                                          <?php } else { ?>
+                                          <li class="top_level">
+                                              <a href="<?php echo $category['href']; ?>">
+                                                  <?php echo $category['name']; ?>
+                                              </a>
                                         </li>
-                                        <!-- 2 Level Sub Categories END -->
-                                    </ul>
-                                    <?php } ?>
+                                              <?php } ?>
+                                              <?php } ?>
+
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+
+                            </li>
 
                             <?php if(isset($blog_enable)){   ?>
-                            <li class="blog-link">
-                                <a href="<?php echo $all_blogs; ?>">
-                                    <?php echo $text_blog; ?>
-                                </a>
-                            </li>
-                            <?php  } ?>
+<li class="blog-link">
+    <a href="<?php echo $all_blogs; ?>">
+        <?php echo $text_blog; ?>
+    </a>
+</li>
+<?php  } ?>
 
                             <li class="blog-link">
-                                <a  target="_blank" href="https://www.facebook.com/viet.organicthiennhien">
+                                <a target="_blank" href="https://www.facebook.com/viet.organicthiennhien">
                                    Facebook
                                 </a>
                             </li>
                             <li class="blog-link">
-                                <a href="">
+                                <a href="<?php echo $about_us_url; ?>">
                                     About Us
                                 </a>
                             </li>
                             <li class="blog-link">
-                                <a href="">
+                                <a href="<?php echo $contact_us_url; ?>">
                                     Contact
                                 </a>
                             </li>

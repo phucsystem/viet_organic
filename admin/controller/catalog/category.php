@@ -360,7 +360,7 @@ class ControllerCatalogCategory extends Controller {
 		} else {
 			$data['error_parent'] = '';
 		}
-		
+
 		$url = '';
 
 		if (isset($this->request->get['sort'])) {
@@ -497,7 +497,7 @@ class ControllerCatalogCategory extends Controller {
 		} elseif (!empty($category_info)) {
 			$data['top'] = $category_info['top'];
 		} else {
-			$data['top'] = 0;
+			$data['top'] = 1;
 		}
 
 		if (isset($this->request->post['column'])) {
@@ -560,11 +560,11 @@ class ControllerCatalogCategory extends Controller {
 
 		if (isset($this->request->get['category_id']) && $this->request->post['parent_id']) {
 			$results = $this->model_catalog_category->getCategoryPath($this->request->post['parent_id']);
-			
+
 			foreach ($results as $result) {
 				if ($result['path_id'] == $this->request->get['category_id']) {
 					$this->error['parent'] = $this->language->get('error_parent');
-					
+
 					break;
 				}
 			}
@@ -583,11 +583,11 @@ class ControllerCatalogCategory extends Controller {
 				$this->error['keyword'] = sprintf($this->language->get('error_keyword'));
 			}
 		}
-		
+
 		if ($this->error && !isset($this->error['warning'])) {
 			$this->error['warning'] = $this->language->get('error_warning');
 		}
-		
+
 		return !$this->error;
 	}
 
