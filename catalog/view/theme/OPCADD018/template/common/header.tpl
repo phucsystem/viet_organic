@@ -249,7 +249,7 @@
                                                     <?php if ($category['children']) { ?>
                                                     <ul class="list-unstyled childs_2">
                                                       <?php foreach ($category['children'] as $child) {  ?>
-                                                          <li><a href="http://opencart.templatemela.com/OPCADD/OPC018/index.php?route=product/category&amp;path=20_26_4"> <?php echo $child['name'] ?></a></li>
+                                                          <li><a href="/index.php?route=product/product&product_id=<?php echo $child['product_id'] ?>"> <?php echo $child['name'] ?></a></li>
                                                         <?php } ?>
                                                     </ul>
                                                     <?php } ?>
@@ -272,7 +272,7 @@
                             <?php  } ?>
 
                             <li class="blog-link">
-                                <a href="">
+                                <a  target="_blank" href="https://www.facebook.com/viet.organicthiennhien">
                                    Facebook
                                 </a>
                             </li>
