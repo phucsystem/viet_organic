@@ -75,7 +75,7 @@
 												</div>
 											<?php /*?><?php } ?><?php */?>
 
-											<h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
+                      <span class="product-name"> <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></span>
 											<?php if ($product['price']) { ?>
 												<p class="price">
 												  <?php if (!$product['special']) { ?>
@@ -133,7 +133,7 @@
 	<div class="box">
 				<div class="box-content">
 					<?php
-						$sliderFor = 10;
+						$sliderFor = 5;
 						$productCount = sizeof($latestproducts);
 					?>
 
@@ -281,7 +281,7 @@
 												</div>
 											<?php /*?><?php } ?><?php */?>
 
-											<h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
+                      <span class="product-name"> <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></span>
 
 											<?php if ($product['price']) { ?>
 												<p class="price">
