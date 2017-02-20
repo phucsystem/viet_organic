@@ -469,7 +469,7 @@ header {
 
 #logo {
     margin: 0 0 0 0;
-    display: inline-block; 
+    display: inline-block;
 }
 
 #tmslidertopcmsinfo_block.container {
@@ -3635,7 +3635,7 @@ content: "\f068";
 }
 
 #content .product-carousel .product-block:hover, #content .product-grid .product-block:hover, #producttab .box-product .product-block:hover {
-		border: 1px solid #88bb22;
+		border: 6px solid #d2e2aa;
 }
 
 .product-block:hover .saleicon.sale {
