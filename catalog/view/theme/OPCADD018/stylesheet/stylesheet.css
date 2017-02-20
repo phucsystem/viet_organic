@@ -277,7 +277,7 @@ ul.currency-menu {
 }
 
 header {
-    background: #fff;
+    background: #555555;
 }
 
 #wishlist-total>span::before {
@@ -449,7 +449,7 @@ header {
 .col-sm-4.header-logo {
     float: left;
     margin: 0;
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 0;
     width: auto;
 }
 
@@ -477,7 +477,7 @@ header {
 }
 
 .nav-container {
-    margin: 10px auto 0;
+    margin: 0 auto 0;
     background: #88bb22 none repeat scroll 0 0;
     margin-bottom: 40px;
 }
@@ -503,7 +503,7 @@ header {
 }
 
 .phone>h4 {
-    color: #1a1a1a;
+    color: white;
     float: left;
     font-size: 16px;
     font-weight: 600;
@@ -531,6 +531,7 @@ header {
     font-size: 13px;
     margin-left: 65px;
     margin-top: -14px;
+    color: #ffffff;
 }
 
 .phone a:hover, .phone a:focus {
@@ -745,7 +746,7 @@ header .container {
 	font-weight: normal;
 	letter-spacing:0;
 	text-transform:capitalize;*/
-    color: #1a1a1a;
+    color: #ffffff;
     display: block;
     font-size: 13px;
     font-weight: normal;
@@ -810,6 +811,7 @@ span.account-toggle:after {
     padding: 0 0 3px 10px;
     position: relative;
     margin: 0;
+    color: #ffffff
 }
 
 .header-right.header-right-fixed #cart>.btn {
@@ -1067,7 +1069,7 @@ span.account-toggle:after {
     margin: 0;
     padding: 12px 0 18px;
     position: relative;
-    background: #fff;
+    background: #444444;
 }
 
 #menu .dropdown-menu .dropdown-inner ul.list-unstyled li .dropdown-menu .dropdown-inner ul.list-unstyled>li>a {
@@ -1118,7 +1120,7 @@ span.account-toggle:after {
 }
 
 #menu ul.nav li .megamenu.column1 ul.list-unstyled li>a:hover {
-    color: #000000;
+    color: #88bb22;
 }
 
 #menu .dropdown:hover .dropdown-menu.column1 {
@@ -1127,7 +1129,7 @@ span.account-toggle:after {
 
 #menu ul.nav li .megamenu.column1 ul.list-unstyled li>a {
     border-bottom: medium none;
-    color: #88bb22;
+    color: #ffffff;
     padding: 3px;
 		font-size:15px;
 		font-weight:700;
@@ -1170,7 +1172,7 @@ span.account-toggle:after {
 }
 
 #menu .navbar-nav>li>.dropdown-menu {
-    background: #fff;
+    background: #444444;
     border: 1px solid #e5e5e5;
 }
 
@@ -1180,11 +1182,11 @@ span.account-toggle:after {
 }
 
 #menu ul.nav li .megamenu ul.list-unstyled li .dropdown-menu ul.list-unstyled li>a:hover {
-    color: #4c4c4c;
+    color: #88bb22;
 }
 
 #menu ul.nav li .megamenu ul.list-unstyled li .dropdown-menu ul.list-unstyled li>a {
-    color: ##88bb22;
+    color: #ffffff;
     display: inline-block;
     font-size: 15px;
     padding-bottom: 5px;
@@ -3516,7 +3518,7 @@ content: "\f068";
     width: 252px;
     float: left;
     display: inline-block;
-
+		border-right: 1px solid #e3e3e3
 }
 
  #producttab .product-carousel .slider-item {
