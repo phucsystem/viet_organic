@@ -194,7 +194,7 @@
                 <div class="col-sm-4 header-logo">
                     <div id="logo">
                         <?php if ($logo) { ?>
-                        <a href="<?php echo $home; ?>"><img  style="width:120px" src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
+                        <a href="<?php echo $home; ?>"><img  style="width:250px" src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
                         <?php } else { ?>
                         <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
                         <?php } ?>

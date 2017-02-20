@@ -3,7 +3,7 @@ html{
 }
 
 body {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-family: "Tahoma";
     font-weight: 400;
     color: #666;
     font-size: 16px;
@@ -468,8 +468,8 @@ header {
 }
 
 #logo {
-    margin: 0 0 18px 0;
-    display: inline-block;
+    margin: 0 0 0 0;
+    display: inline-block; 
 }
 
 #tmslidertopcmsinfo_block.container {
@@ -2333,7 +2333,7 @@ h2.price {
     font-weight: 700;
     padding-bottom: 15px;
     margin: 0;
-    display: inline-block;
+    display: block;
 }
 
 #column-left .product-thumb .price-new, #column-right .product-thumb .price-new {
@@ -3173,10 +3173,10 @@ content: "\f068";
 }
 
 #producttab .hometab .etabs::before, #content .box .box-heading:before {
-    background: #e5e5e5 none repeat scroll 0 0;
+    background: #88bb22 none repeat scroll 0 0;
     content: "";
     font-family: fontawesome;
-    height: 1px;
+    height: 2px;
     left: 0;
     position: absolute;
     top: 47px;
@@ -3423,7 +3423,7 @@ content: "\f068";
     position: relative;
     width: 100%;
     padding: 0px;
-    margin: 0px;
+    margin: 0;
     list-style: none;
     overflow: hidden;
 }
@@ -3518,7 +3518,6 @@ content: "\f068";
     width: 252px;
     float: left;
     display: inline-block;
-		border-right: 1px solid #e3e3e3
 }
 
  #producttab .product-carousel .slider-item {
@@ -3633,6 +3632,10 @@ content: "\f068";
 #content .product-carousel .product-block:hover, #content .product-grid .product-block:hover, #content .box-product .product-block:hover, #producttab .box-product .product-block:hover {
     overflow: visible;
     clear: both;
+}
+
+#content .product-carousel .product-block:hover, #content .product-grid .product-block:hover, #producttab .box-product .product-block:hover {
+		border: 1px solid #88bb22;
 }
 
 .product-block:hover .saleicon.sale {

@@ -16,64 +16,64 @@
     <div id="content" class="productpage <?php echo $class; ?>"><?php echo $content_top; ?>
       <div class="row">
         <h2 class="page-title"><?php echo $heading_title; ?></h2>
-		
+
 		<?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6 product-left'; ?>
         <?php } else { ?>
         <?php $class = 'col-sm-6 product-left'; ?>
         <?php } ?>
-        
+
 		<div class="<?php echo $class; ?>">
 		<div class="product-info">
          <?php if ($thumb || $images) { ?>
-	
-	
-	
+
+
+
     <div class="left product-image thumbnails">
-      <?php if ($thumb) { ?>      
+      <?php if ($thumb) { ?>
 	  <!-- Megnor Cloud-Zoom Image Effect Start -->
-	  	<div class="image"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img id="tmzoom" src="<?php echo $thumb; ?>" data-zoom-image="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></div> 
+	  	<div class="image"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img id="tmzoom" src="<?php echo $thumb; ?>" data-zoom-image="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></div>
       <?php } ?>
       <?php if ($images) { ?>
-	  	 <?php 
+	  	 <?php
 			$sliderFor = 3;
-			$imageCount = sizeof($images); 
-		 ?>	
-		 <div class="additional-carousel">	
+			$imageCount = sizeof($images);
+		 ?>
+		 <div class="additional-carousel">
 		  <?php if ($imageCount >= $sliderFor): ?>
 		  	<div class="customNavigation">
 				<span class="fa prev fa-caret-up">&nbsp;</span>
 			<span class="fa next fa-caret-down">&nbsp;</span>
-			</div> 
-		  <?php endif; ?>	      
+			</div>
+		  <?php endif; ?>
 		  <div id="additional-carousel" class="image-additional <?php if ($imageCount >= $sliderFor){?>product-carousel<?php }?>">
-    	    
+
 			<div class="slider-item">
-				<div class="product-block">		
+				<div class="product-block">
 					<a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="elevatezoom-gallery" data-image="<?php echo $thumb; ?>" data-zoom-image="<?php echo $popup; ?>"><img src="<?php echo $thumb; ?>" width="82" height="98" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
-					
+
 				</div>
-				</div>		
-				
+				</div>
+
 			<?php foreach ($images as $image) { ?>
 				<div class="slider-item">
-				<div class="product-block">		
+				<div class="product-block">
         			<a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="elevatezoom-gallery" data-image="<?php echo $image['thumb']; ?>" data-zoom-image="<?php echo $image['popup']; ?>" ><img src="<?php echo $image['thumb']; ?>" width="82" height="98" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
 				</div>
-				</div>		
-	        <?php } ?>				
+				</div>
+	        <?php } ?>
     	  </div>
 		  <span class="additional_default_width" style="display:none; visibility:hidden"></span>
 		  </div>
-		<?php } ?>		  	  
-  
+		<?php } ?>
+
 
 	<!-- Megnor Cloud-Zoom Image Effect End-->
     </div>
     <?php } ?>
 	</div>
         </div>
-	
+
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6 product-right'; ?>
         <?php } else { ?>
@@ -81,9 +81,9 @@
         <?php } ?>
         <div class="<?php echo $class; ?>">
           <h3 class="product-title"><?php echo $heading_title; ?></h3>
-		  
+
 		  <?php if ($review_status) { ?>
-          <div class="rating-wrapper">            
+          <div class="rating-wrapper">
               <?php for ($i = 1; $i <= 5; $i++) { ?>
               <?php if ($rating < $i) { ?>
               <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
@@ -93,8 +93,8 @@
               <?php } ?>
               <a class="review-count" href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a><a class="write-review" href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><i class="fa fa-pencil"></i> <?php echo $text_write; ?></a>
 		  </div>
-          <?php } ?> 
-		  
+          <?php } ?>
+
           <ul class="list-unstyled">
             <?php if ($manufacturer) { ?>
             <li><span class="desc"><?php echo $text_manufacturer; ?></span><a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
@@ -113,7 +113,7 @@
             </li>
             <?php } else { ?>
             <li>
-			<span class="old-price" style="text-decoration: line-through;"><?php echo $price; ?></span> 
+			<span class="old-price" style="text-decoration: line-through;"><?php echo $price; ?></span>
             <h4 class="special-price"><?php echo $special; ?></h4>
             </li>
             <?php } ?>
@@ -134,7 +134,7 @@
           <?php } ?>
           <div id="product">
             <?php if ($options) { ?>
-         
+
             <h3 class="product-option"><?php echo $text_option; ?></h3>
             <?php foreach ($options as $option) { ?>
             <?php if ($option['type'] == 'select') { ?>
@@ -161,7 +161,7 @@
                   <label>
                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
                     <?php if ($option_value['image']) { ?>
-                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> 
+                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
                     <?php } ?>
                     <?php echo $option_value['name']; ?>
                     <?php if ($option_value['price']) { ?>
@@ -182,7 +182,7 @@
                   <label>
                     <input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" />
                     <?php if ($option_value['image']) { ?>
-                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> 
+                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
                     <?php } ?>
                     <?php echo $option_value['name']; ?>
                     <?php if ($option_value['price']) { ?>
@@ -194,7 +194,7 @@
               </div>
             </div>
             <?php } ?>
-            
+
             <?php if ($option['type'] == 'text') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
               <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
@@ -263,27 +263,27 @@
               <label class="control-label qty" for="input-quantity"><?php echo $entry_qty; ?></label>
               <input type="text" name="quantity" value="<?php echo $minimum; ?>" size="2" id="input-quantity" class="form-control" />
               <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
-              
-             
+
+
             </div>
             <?php if ($minimum > 1) { ?>
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>
             <?php } ?>
           </div>
-		  
+
 		  <div class="btn-group product">
 		     <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
-            <button type="button"  class="btn btn-default wishlist" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
+            <!-- <button type="button"  class="btn btn-default wishlist" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button> -->
             <button type="button"  class="btn btn-default compare" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-bar-chart"></i></button>
           </div>
-		  
-                   
+
+
             <!-- AddThis Button BEGIN -->
             <div class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script> 
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
             <!-- AddThis Button END -->
-			<div class="content_product_block"><?php echo $productblock; ?> </div> 
-          
+			<div class="content_product_block"><?php echo $productblock; ?> </div>
+
         </div>
 		<?php if ($column_left && $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
@@ -329,7 +329,7 @@
             <div class="tab-pane" id="tab-review">
               <form class="form-horizontal" id="form-review">
                 <div id="review"></div>
-                <h4><?php echo $text_write; ?></h4>				
+                <h4><?php echo $text_write; ?></h4>
 				<?php if ($review_guest) { ?>
                 <div class="form-group required">
                   <div class="col-sm-12">
@@ -360,7 +360,7 @@
                     &nbsp;<?php echo $entry_good; ?></div>
                 </div>
                 <?php echo $captcha; ?>
-                
+
                 <div class="buttons clearfix">
                   <div class="pull-right">
                     <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><?php echo $button_continue; ?></button>
@@ -377,47 +377,47 @@
       </div>
       <?php if ($products) { ?>
 	  <div class="box related">
-	  
+
 	   <div class="box-heading"><?php echo $text_related; ?></div>
 	   <div class="box-content">
 			<div id="products-related" class="related-products">
-			<?php 
+			<?php
 				$sliderFor = 5;
-				$productCount = sizeof($products); 
+				$productCount = sizeof($products);
 			?>
-			
-				
-				
+
+
+
 				<div class="box-product <?php if ($productCount >= $sliderFor){?>product-carousel<?php }else{?>productbox-grid<?php }?>" id="<?php if ($productCount >= $sliderFor){?>related-carousel<?php }else{?>related-grid<?php }?>">
-				
+
       		  <?php foreach ($products as $product) { ?>
 				<div class="<?php if ($productCount >= $sliderFor){?>slider-item<?php }else{?>product-items<?php }?>">
 					 <div class="product-block product-thumb transition">
 	  					<div class="product-block-inner">
 							<div class="image">
-				<?php if ($product['thumb_swap']) { ?>	
+				<?php if ($product['thumb_swap']) { ?>
 				<a href="<?php echo $product['href']; ?>">
-				<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />						
+				<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />
 				<img class="img-responsive hover-image" src="<?php echo $product['thumb_swap']; ?>" alt="<?php echo $product['name']; ?>"/>
 				</a>
 				<?php } else {?>
 				<a href="<?php echo $product['href']; ?>">
-				<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />						
+				<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />
 				</a>
 				<?php } ?>
 
-							<?php if (!$product['special']) { ?>       
+							<?php if (!$product['special']) { ?>
 							<?php } else { ?>
 							<div class="saleback">
-							<span class="saleicon sale">Sale</span>         
+							<span class="saleicon sale">Sale</span>
 							</div>
 							<?php } ?>
-							 
+
 							 <div class="quickview_prd" ><a href="<?php echo $product['quick']; ?>"></a></div>
-					
+
 							</div>
 					<div class="product-details">
-					
+
 					<div class="caption">
 					<?php /*?><?php if ($product['rating']) { ?><?php */?>
 						<div class="rating">
@@ -432,7 +432,7 @@
 					   <?php /*?> <?php } ?><?php */?>
 					  <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
 					<?php /*?>  <p><?php echo $product['description']; ?></p><?php */?>
-					 
+
 					  <?php if ($product['price']) { ?>
 					  <p class="price">
 						<?php if (!$product['special']) { ?>
@@ -445,19 +445,19 @@
 						<?php } ?>
 					  </p>
 					  <?php } ?>
-					  
-			
-			   
+
+
+
 					</div>
 					<div class="button-group">
 					<button type="button" class="addtocart" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><?php echo $button_cart; ?></button>
-					   
+
 					  <button type="button" class="compare_button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
 					  <button type="button" class="wishlist_button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
 					</div>
 					</div>
 				  		<span class="related_default_width" style="display:none; visibility:hidden"></span>
-					<!-- Megnor Related Products Start -->	
+					<!-- Megnor Related Products Start -->
 				  </div>
 				  </div>
 				</div>
@@ -467,8 +467,8 @@
 					<div class="customNavigation">
 						<a class="fa prev fa-angle-left">&nbsp;</a>
 						<a class="fa next fa-angle-right">&nbsp;</a>
-					</div>	
-				<?php endif; ?>	
+					</div>
+				<?php endif; ?>
 		</div>
 		</div>
 	  </div>
@@ -485,7 +485,7 @@
       </div>
       <?php } ?>
 	  </div>
-     
+
     <?php echo $column_right; ?></div>
 	<?php echo $content_bottom; ?>
 </div>
@@ -585,7 +585,7 @@ $('#button-cart').on('click', function() {
 							'<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
 						'</div>' +
 						'<a href="{3}" target="{4}" data-notify="url"></a>' +
-					'</div>' 
+					'</div>'
 				});
 
 				$('#cart > button').html('<div class="cart-border"><h4>Shopping Cart</h4><span id="cart-total">' + json['total'] + '</span></div>' );
@@ -721,48 +721,48 @@ $('#button-review').on('click', function() {
 $(document).ready(function() {
 if ($(window).width() > 767) {
 		$("#tmzoom").elevateZoom({
-				
+
 				gallery:'additional-carousel',
-				//inner zoom				 
-								 
-				zoomType : "inner", 
-				cursor: "crosshair" 
-				
+				//inner zoom
+
+				zoomType : "inner",
+				cursor: "crosshair"
+
 				/*//tint
-				
-				tint:true, 
-				tintColour:'#F90', 
+
+				tint:true,
+				tintColour:'#F90',
 				tintOpacity:0.5
-				
+
 				//lens zoom
-				
-				zoomType : "lens", 
-				lensShape : "round", 
-				lensSize : 200 
-				
+
+				zoomType : "lens",
+				lensShape : "round",
+				lensSize : 200
+
 				//Mousewheel zoom
-				
+
 				scrollZoom : true*/
-				
-				
+
+
 			});
 		var z_index = 0;
-     			    		
+
      			    		$(document).on('click', '.thumbnail', function () {
      			    		  $('.thumbnails').magnificPopup('open', z_index);
      			    		  return false;
      			    		});
-			    		
+
      			    		$('.additional-carousel a').click(function() {
      			    			var smallImage = $(this).attr('data-image');
      			    			var largeImage = $(this).attr('data-zoom-image');
-     			    			var ez =   $('#tmzoom').data('elevateZoom');	
-     			    			$('.thumbnail').attr('href', largeImage);  
-     			    			ez.swaptheimage(smallImage, largeImage); 
+     			    			var ez =   $('#tmzoom').data('elevateZoom');
+     			    			$('.thumbnail').attr('href', largeImage);
+     			    			ez.swaptheimage(smallImage, largeImage);
      			    			z_index = $(this).index('.additional-carousel a');
      			    			return false;
      			    		});
-			
+
 	}else{
 		$(document).on('click', '.thumbnail', function () {
 		$('.thumbnails').magnificPopup('open', 0);
@@ -770,7 +770,7 @@ if ($(window).width() > 767) {
 		});
 	}
 });
-$(document).ready(function() {     
+$(document).ready(function() {
 	$('.thumbnails').magnificPopup({
 		delegate: 'a.elevatezoom-gallery',
 		type: 'image',
