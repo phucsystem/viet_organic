@@ -177,6 +177,7 @@ class ControllerCommonHeader extends Controller {
 		$data['headertop'] = $this->load->controller('common/headertop');
 		$data['about_us_url'] = $this->url->link('information/information', 'information_id=4');
 		$data['contact_us_url'] = $this->url->link('information/contact');
+		$data['search_product_url'] = $this->url->link('product/search');
 
 		// For page specific css
 		if (isset($this->request->get['route'])) {

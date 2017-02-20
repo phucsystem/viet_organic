@@ -196,9 +196,9 @@ class ControllerProductSearch extends Controller {
 
 		$data['products'] = array();
 
-		if (isset($this->request->get['search']) || isset($this->request->get['tag'])) {
+		// if (isset($this->request->get['search']) || isset($this->request->get['tag'])) {
 			$filter_data = array(
-				'filter_name'         => $search,
+				// 'filter_name'         => $search,
 				'filter_tag'          => $tag,
 				'filter_description'  => $description,
 				'filter_category_id'  => $category_id,
@@ -208,6 +208,14 @@ class ControllerProductSearch extends Controller {
 				'start'               => ($page - 1) * $limit,
 				'limit'               => $limit
 			);
+
+			if(isset($this->request->get['search'])){
+				$filter_data['filter_name'] = $search;
+			}
+
+			if(isset($this->request->get['tag'])){
+				$filter_data['filter_tag'] = $tag;
+			}
 
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
@@ -219,18 +227,18 @@ class ControllerProductSearch extends Controller {
 				} else {
 					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
 				}
-				
+
 				//added for image swap
-				
+
 				$images = $this->model_catalog_product->getProductImages($result['product_id']);
 
 				if(isset($images[0]['image']) && !empty($images)){
-				 $images = $images[0]['image']; 
+				 $images = $images[0]['image'];
 				   }else
 				   {
 				   $images = $image;
 				   }
-				    
+
 				//
 
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
@@ -485,7 +493,7 @@ class ControllerProductSearch extends Controller {
 
 				$this->model_account_search->addSearch($search_data);
 			}
-		}
+		// }
 
 		$data['search'] = $search;
 		$data['description'] = $description;

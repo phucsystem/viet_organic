@@ -265,9 +265,8 @@
 
 
                         <li class="top_level dropdown">
-                            <a href="/>">
+                            <a href="<?php echo $search_product_url ?>">
                                 <?php echo $text_product; ?>
-                            </a>
                             </a>
                             <div class="dropdown-menu megamenu column1" style="">
                                 <div class="dropdown-inner">
