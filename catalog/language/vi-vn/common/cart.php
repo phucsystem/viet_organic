@@ -5,3 +5,4 @@ $_['text_empty']    = 'Không có sản phẩm trong giỏ hàng!';
 $_['text_cart']     = 'Xem chi tiết giỏ hàng';
 $_['text_checkout'] = 'Thanh toán';
 $_['text_recurring']  = 'Chi trả theo kỳ';
+$_['text_shopping_cart'] = 'Giỏ Hàng';

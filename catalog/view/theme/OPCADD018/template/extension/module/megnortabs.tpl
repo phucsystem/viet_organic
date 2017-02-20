@@ -7,7 +7,7 @@
 <div class="tab-title"><?php /*?><?php echo $heading_title; ?><?php */?></div>
 </div>
 
-<div id="tabs" class="htabs">
+<div id="tabs2" class="htabs">
   <ul class='etabs'>
 	<li class='tab'>
 		<?php if($latestproducts){ ?>
@@ -337,5 +337,6 @@
 </div>
 </div>
 <script type="text/javascript">
-$('#tabs a').tabs();
+$('#tabs2 a').tabs();
+
 </script>

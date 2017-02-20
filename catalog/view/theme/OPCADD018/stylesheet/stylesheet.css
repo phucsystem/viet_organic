@@ -1438,7 +1438,7 @@ footer {
 
 #footer-top {
     background: #88bb22 none repeat scroll 0 0;
-    height: 90px;
+    height: 10px;
     margin-bottom: 39px;
     padding: 0;
     width: 100%;
@@ -1591,7 +1591,7 @@ footer a:hover, footer a:focus {
 
 #footer-top #fotter-left-bg {
     background: #73a311 none repeat scroll 0 0;
-    height: 90px;
+    height: 0px;
     left: 0;
     position: absolute;
     top: 0;
@@ -1994,7 +1994,7 @@ footer h5 {
     display: inline-block;
     float: left;
     position: relative;
-    text-align: left;
+    text-align: center;
     width: 100%;
 }
 
@@ -2368,6 +2368,8 @@ h2.price {
     opacity: 0;
     overflow: auto;
     position: absolute;
+		width: 100%;
+		text-align: center;
 }
 
 #content .product-grid .product-thumb:hover .button-group, #content .product-carousel .product-thumb:hover .button-group, #content .box-product .product-thumb:hover .button-group, #producttab .box-product .product-thumb:hover .button-group {
@@ -3500,10 +3502,28 @@ content: "\f068";
     overflow: hidden;
 }
 
+#producttab .box-product .product-items {
+    margin-bottom: 14px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+		/*border-right: 1px solid #e5e5e5;*/
+
+}
+
 .product-grid li, .productbox-grid .slider-item, #content .box-product .product-items, #content .product-carousel .slider-item, #producttab .box-product .product-items, #producttab .product-carousel .slider-item {
     width: 252px;
     float: left;
     display: inline-block;
+
+}
+
+ #producttab .product-carousel .slider-item {
+    width: 252px;
+    float: left;
+    display: inline-block;
+		/*border-right: 1px solid #e5e5e5;*/
 }
 
 .ie7 .product-grid li {

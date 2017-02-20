@@ -28,7 +28,7 @@
 			<strong><?php echo $store; ?></strong>
               <address> <?php echo $address; ?></address>
               <?php if ($geocode) { ?>
-              <a href="https://maps.google.com/maps?q=<?php echo urlencode($geocode); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank" class="btn btn-info"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
+              <!-- <a href="https://maps.google.com/maps?q=<?php echo urlencode($geocode); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank" class="  "><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a> -->
               <?php } ?>
             </div>
             <div class="telephone">
@@ -36,13 +36,13 @@
 			<strong><?php echo $text_telephone; ?></strong>
                <address><?php echo $telephone; ?> </address>
 			</div>
-			<div class="fax">	
+			<div class="fax">
               <?php if ($fax) { ?>
 			  <i class="fa fa-fax"></i>
               <strong><?php echo $text_fax; ?></strong>
               <address><?php echo $fax; ?></address>
               <?php } ?>
-			  
+
             </div>
 			<div class="open-time">
               <?php if ($open) { ?>
@@ -50,8 +50,8 @@
               <strong><?php echo $text_open; ?></strong>
               <address><?php echo $open; ?></address>
               <?php } ?>
-			 </div> 
-			<div class="comment">  			
+			 </div>
+			<div class="comment">
               <?php if ($comment) { ?>
 			  <i class="fa fa-bullhorn"></i>
               <strong><?php echo $text_comment; ?></strong>
@@ -61,21 +61,22 @@
 			</div>
 			<div class="right">
 				<div class="map">
-						<?php /*?><?php
+						<?php
 						$geo=explode(',',$geocode);
-						print_r($geo);
-						echo count($geo);
+						//print_r($geo);
+						//echo count($geo);
 						if(count($geo)==2){
-								echo "yes";
+							//	echo "yes";
 						}
 						else{
-								echo "no";
+							//	echo "no";
 						}
-					?><?php */?>
-				<script type="text/javascript" src="http://www.webestools.com/google_map_gen.js?lati=21.182785&long=72.831834&zoom=14&width=440&height=350&mapType=normal&map_btn_normal=yes&map_btn_satelite=yes&map_btn_mixte=yes&map_small=yes&marqueur=yes&info_bulle="></script>
+
+					?>
+				<script type="text/javascript" src="http://www.webestools.com/google_map_gen.js?lati=<?php echo $geo[0]?>&long=<?php echo $geo[1]?>&zoom=14&width=440&height=350&mapType=normal&map_btn_normal=yes&map_btn_satelite=yes&map_btn_mixte=yes&map_small=yes&marqueur=yes&info_bulle="></script>
 				</div>
 			</div>
-            
+
           </div>
         </div>
       </div>
@@ -100,7 +101,7 @@
                   <?php if ($location['geocode']) { ?>
                   	<a href="https://maps.google.com/maps?q=<?php echo urlencode($location['geocode']); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank" class="btn btn-info"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
                   <?php } ?>
-                </div> 
+                </div>
 
                 <div class="col-sm-3"><strong><?php echo $text_telephone; ?></strong><br>
                   <?php echo $location['telephone']; ?><br />

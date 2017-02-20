@@ -7,7 +7,7 @@
 <div class="tab-title"><?php /*?><?php echo $heading_title; ?><?php */?></div>
 </div>
 
-<div id="tab-latest" class="tab-content ">
+<div id="" class="tab-content ">
 	<div class="box">
 				<div class="box-content">
 					<?php
@@ -18,7 +18,7 @@
           <div id="tabs" class="htabs">
             <ul class='etabs'>
           	<li class='tab'>
-          			<a href="#tab-latest" class="tab-text" data-text="<?php echo $heading_title; ?>" style="padding-bottom:7px;"><span><?php echo $heading_title; ?></span></a>
+          			<a href="" class="tab-text" data-text="<?php echo $heading_title; ?>" style="padding-bottom:7px;"><span><?php echo $heading_title; ?></span></a>
           	</li>
           	</ul>
            </div>
@@ -119,5 +119,5 @@
 </div>
 </div>
 <script type="text/javascript">
-$('#tabs a').tabs();
+// $('#tabs a').tabs();
 </script>

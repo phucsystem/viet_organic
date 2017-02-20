@@ -136,6 +136,12 @@ class ControllerCommonColumnLeft extends Controller {
 
 			if ($this->user->hasPermission('access', 'catalog/information')) {
 				$catalog[] = array(
+					'name'	   => 'Information',
+					'href'     => $this->url->link('catalog/information', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+
+				$catalog[] = array(
 					'name'	   => 'Blogs',
 					'href'     => $this->url->link('extension/module/blogger&module_id=42', 'token=' . $this->session->data['token'], true),
 					'children' => array()

@@ -72,6 +72,7 @@ class ControllerCommonHeader extends Controller {
 		$data['text_blog'] = $this->language->get('text_blog');
 		$data['text_contact'] = $this->language->get('text_contact');
 		$data['text_product'] = $this->language->get('text_product');
+		$data['text_about_us'] = $this->language->get('text_about_us');
 
 		$data['all_blogs'] = $this->url->link('information/blogger/blogs');
 

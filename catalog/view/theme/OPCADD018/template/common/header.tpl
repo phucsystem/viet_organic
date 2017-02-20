@@ -231,7 +231,7 @@
                     <div class="col-sm-4 header-right">
                         <div class="phone">
                             <a href="<?php echo $contact; ?>"></a>
-                            <h4><?php echo $text_contact; ?> </h4><span>No: <?php echo $telephone; ?></span></div>
+                            <h4><?php echo $text_contact; ?> </h4><span>Tel: <?php echo $telephone; ?></span></div>
                     </div>
                     <div class="col-sm-4 header-cart">
                         <?php echo $cart; ?>
@@ -264,72 +264,80 @@
                         </li>
 
 
-                            <li class="top_level dropdown"><a href="/>"><?php echo $text_product; ?></a></a>
-                                <div class="dropdown-menu megamenu column1" style="">
-                                    <div class="dropdown-inner">
-                                        <ul class="list-unstyled childs_1">
-                                          <?php foreach ($categories as $category) { ?>
-                                          <?php if ($category['children']) { ?>
-                                          <li class="dropdown">
-                                              <a href="<?php echo $category['href']; ?>">
-                                                  <?php echo $category['name']; ?>
-                                              </a>
+                        <li class="top_level dropdown">
+                            <a href="/>">
+                                <?php echo $text_product; ?>
+                            </a>
+                            </a>
+                            <div class="dropdown-menu megamenu column1" style="">
+                                <div class="dropdown-inner">
+                                    <ul class="list-unstyled childs_1">
+                                        <?php foreach ($categories as $category) { ?>
+                                        <?php if ($category['children']) { ?>
+                                        <li class="dropdown">
+                                            <a href="<?php echo $category['href']; ?>">
+                                                <?php echo $category['name']; ?>
+                                            </a>
 
-                                              <?php $children =  $category['children'];?>
+                                            <?php $children =  $category['children'];?>
 
-                                              <!-- 2 Level Sub Categories START -->
-                                              <!-- 2 Level Sub Categories END -->
-                                              <!-- 2 Level Sub Categories START -->
-                                                  <div class="dropdown-menu" style="">
-                                                      <div class="dropdown-inner">
-                                                          <ul class="list-unstyled childs_2">
-                                                              <?php foreach ($children as $child) { ?>
-                                                                <li><a href="<?php echo $child['href']; ?>"> <?php echo $child['name']; ?></a></li>
-                                                              <?php } ?>
-                                                          </ul>
-                                                      </div>
-                                                  </div>
-                                              <!-- 2 Level Sub Categories END -->
-                                          </li>
-
-                                          <?php } else { ?>
-                                          <li class="top_level">
-                                              <a href="<?php echo $category['href']; ?>">
-                                                  <?php echo $category['name']; ?>
-                                              </a>
+                                            <!-- 2 Level Sub Categories START -->
+                                            <!-- 2 Level Sub Categories END -->
+                                            <!-- 2 Level Sub Categories START -->
+                                            <div class="dropdown-menu" style="">
+                                                <div class="dropdown-inner">
+                                                    <ul class="list-unstyled childs_2">
+                                                        <?php foreach ($children as $child) { ?>
+                                                        <li>
+                                                            <a href="<?php echo $child['href']; ?>">
+                                                                <?php echo $child['name']; ?>
+                                                            </a>
+                                                        </li>
+                                                        <?php } ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- 2 Level Sub Categories END -->
                                         </li>
-                                              <?php } ?>
-                                              <?php } ?>
 
-                                        </ul>
-                                    </div>
+                                        <?php } else { ?>
+                                        <li class="top_level">
+                                            <a href="<?php echo $category['href']; ?>">
+                                                <?php echo $category['name']; ?>
+                                            </a>
+                                        </li>
+                                        <?php } ?>
+                                        <?php } ?>
+
+                                    </ul>
                                 </div>
+                            </div>
 
-                            </li>
+                        </li>
 
-                            <?php if(isset($blog_enable)){   ?>
-<li class="blog-link">
-    <a href="<?php echo $all_blogs; ?>">
-        <?php echo $text_blog; ?>
-    </a>
-</li>
-<?php  } ?>
+                        <?php if(isset($blog_enable)){   ?>
+                        <li class="blog-link">
+                            <a href="<?php echo $all_blogs; ?>">
+                                <?php echo $text_blog; ?>
+                            </a>
+                        </li>
+                        <?php  } ?>
 
-                            <li class="blog-link">
-                                <a target="_blank" href="https://www.facebook.com/viet.organicthiennhien">
+                        <li class="blog-link">
+                            <a target="_blank" href="https://www.facebook.com/viet.organicthiennhien">
                                    Facebook
                                 </a>
-                            </li>
-                            <li class="blog-link">
-                                <a href="<?php echo $about_us_url; ?>">
-                                    About Us
+                        </li>
+                        <li class="blog-link">
+                            <a href="<?php echo $about_us_url; ?>">
+                                    <?php echo $text_about_us ?>
                                 </a>
-                            </li>
-                            <li class="blog-link">
-                                <a href="<?php echo $contact_us_url; ?>">
-                                    Contact
+                        </li>
+                        <li class="blog-link">
+                            <a href="<?php echo $contact_us_url; ?>">
+                                    <?php echo $text_contact ?>
                                 </a>
-                            </li>
+                        </li>
                     </ul>
 
                 </div>

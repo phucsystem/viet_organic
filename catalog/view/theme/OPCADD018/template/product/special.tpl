@@ -18,14 +18,14 @@
       <?php if ($products) { ?>
       <div class="category_filter">
         <div class="col-md-4 btn-list-grid">
-		
+
           <div class="btn-group">
-		  	
+
             <button type="button" id="grid-view" class="btn btn-default grid" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th-large"></i></button>
 			<button type="button" id="list-view" class="btn btn-default list" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
           </div>
         </div>
-		
+
 		<div class="pagination-right">
 		 <div class="sort-by-wrapper">
 			<div class="col-md-2 text-right sort-by">
@@ -62,37 +62,37 @@
       </div>
 	  <div class="compare-total"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
 	  </div>
-   
-      <div class="row category-product">  
-        <?php foreach ($products as $product) { ?>     
+
+      <div class="row category-product">
+        <?php foreach ($products as $product) { ?>
         <div class="product-layout product-list col-xs-12">
           <div class="product-block product-thumb">
 		  <div class="product-block-inner">
             <div class="image">
-				<?php if ($product['thumb_swap']) { ?>	
+				<?php if ($product['thumb_swap']) { ?>
 				<a href="<?php echo $product['href']; ?>">
-				<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />						
+				<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />
 				<img class="img-responsive hover-image" src="<?php echo $product['thumb_swap']; ?>" alt="<?php echo $product['name']; ?>"/>
 				</a>
 				<?php } else {?>
 				<a href="<?php echo $product['href']; ?>">
-				<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />						
+				<img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />
 				</a>
 				<?php } ?>
-			
-			<?php if (!$product['special']) { ?>       
+
+			<?php if (!$product['special']) { ?>
 				<?php } else { ?>
 				<div class="saleback">
-				<span class="saleicon sale">Sale</span>         
+				<span class="saleicon sale">Sale</span>
 				</div>
 			<?php } ?>
 				<div class="quickview_prd" ><a href="<?php echo $product['quick']; ?>"></a></div>
-					
+
 			</div>
             <div class="product-details grid">
             <div class="caption">
 			  <?php /*?><?php if ($product['rating']) { ?><?php */?>
-                <div class="rating">
+                <!-- <div class="rating">
                   <?php for ($i = 1; $i <= 5; $i++) { ?>
 						<?php if ($product['rating'] < $i) { ?>
 							<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
@@ -100,11 +100,11 @@
 						<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
 						<?php } ?>
 					<?php } ?>
-                </div>
+                </div> -->
                <?php /*?> <?php } ?><?php */?>
 				<h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
               <p class="desc"><?php echo $product['description']; ?></p>
-              
+
               <?php if ($product['price']) { ?>
               <p class="price">
                 <?php if (!$product['special']) { ?>
@@ -117,8 +117,8 @@
                 <?php } ?>
               </p>
               <?php } ?>
-			  
-								
+
+
               </div>
 			  <div class="button-group grid">
 					<button type="button" class="addtocart" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><?php echo $button_cart; ?></button>
@@ -126,13 +126,13 @@
 					<button type="button" class="compare" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-bar-chart"></i></button>
             	</div>
             </div>
-			
-			
+
+
 			<div class="product-details list">
-			 <div class="caption"> 	
+			 <div class="caption">
 			 	<h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
 			  <?php /*?><?php if ($product['rating']) { ?><?php */?>
-                <div class="rating">
+                <!-- <div class="rating">
                  <?php for ($i = 1; $i <= 5; $i++) { ?>
 						<?php if ($product['rating'] < $i) { ?>
 							<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
@@ -140,10 +140,10 @@
 						<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
 						<?php } ?>
 					<?php } ?>
-                </div>
+                </div> -->
                <?php /*?> <?php } ?><?php */?>
                 <p class="desc"><?php echo $product['description']; ?></p>
-			  
+
                <div class="button-group list">
                 <button type="button" class="wishlist" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i><span><?php echo $button_wishlist; ?></span></button>
                 <button type="button" class="compare" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-bar-chart"></i><span><?php echo $button_compare; ?></span></button>
@@ -163,7 +163,7 @@
                   <?php } ?>
                 </p>
                 <?php } ?>
-               
+
 			  </div>
 			</div>
 			</div>
@@ -174,7 +174,7 @@
       <div class="pagination-wrapper">
 			<div class="col-sm-6 text-left page-link"><?php echo $pagination; ?></div>
 			<div class="col-sm-6 text-right page-result"><?php echo $results; ?></div>
-	   </div>   
+	   </div>
       <?php } else { ?>
       <p><?php echo $text_empty; ?></p>
       <div class="buttons">
