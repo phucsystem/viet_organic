@@ -3,7 +3,7 @@ html{
 }
 
 body {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-family: "Tahoma";
     font-weight: 400;
     color: #666;
     font-size: 16px;
@@ -449,7 +449,7 @@ header {
 .col-sm-4.header-logo {
     float: left;
     margin: 0;
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 0;
     width: auto;
 }
 
@@ -468,7 +468,7 @@ header {
 }
 
 #logo {
-    margin: 0 0 18px 0;
+    margin: 0 0 0 0;
     display: inline-block;
 }
 
@@ -1069,7 +1069,7 @@ span.account-toggle:after {
     margin: 0;
     padding: 12px 0 18px;
     position: relative;
-    background: #fff;
+    background: #444444;
 }
 
 #menu .dropdown-menu .dropdown-inner ul.list-unstyled li .dropdown-menu .dropdown-inner ul.list-unstyled>li>a {
@@ -1120,7 +1120,7 @@ span.account-toggle:after {
 }
 
 #menu ul.nav li .megamenu.column1 ul.list-unstyled li>a:hover {
-    color: #000000;
+    color: #88bb22;
 }
 
 #menu .dropdown:hover .dropdown-menu.column1 {
@@ -1129,7 +1129,7 @@ span.account-toggle:after {
 
 #menu ul.nav li .megamenu.column1 ul.list-unstyled li>a {
     border-bottom: medium none;
-    color: #88bb22;
+    color: #ffffff;
     padding: 3px;
 		font-size:15px;
 		font-weight:700;
@@ -1172,7 +1172,7 @@ span.account-toggle:after {
 }
 
 #menu .navbar-nav>li>.dropdown-menu {
-    background: #fff;
+    background: #444444;
     border: 1px solid #e5e5e5;
 }
 
@@ -1182,11 +1182,11 @@ span.account-toggle:after {
 }
 
 #menu ul.nav li .megamenu ul.list-unstyled li .dropdown-menu ul.list-unstyled li>a:hover {
-    color: #4c4c4c;
+    color: #88bb22;
 }
 
 #menu ul.nav li .megamenu ul.list-unstyled li .dropdown-menu ul.list-unstyled li>a {
-    color: ##88bb22;
+    color: #ffffff;
     display: inline-block;
     font-size: 15px;
     padding-bottom: 5px;
@@ -1719,7 +1719,7 @@ footer h5 {
 }
 
 .parallex {
-    3background-color: #f2f2f2;
+    background-color: #f2f2f2;
     background-image: url("../image/megnor/parallax.jpg");
     background-position: 50% 0;
     background-repeat: repeat;
@@ -2331,6 +2331,7 @@ h2.price {
     color: #000000;
     font-size: 20px;
     font-weight: 700;
+    padding-bottom: 15px;
     margin: 0;
     display: block;
 }
@@ -2369,8 +2370,8 @@ h2.price {
     opacity: 0;
     overflow: auto;
     position: absolute;
-    width: 100%;
-    text-align: center;
+		width: 100%;
+		text-align: center;
 }
 
 #content .product-grid .product-thumb:hover .button-group, #content .product-carousel .product-thumb:hover .button-group, #content .box-product .product-thumb:hover .button-group, #producttab .box-product .product-thumb:hover .button-group {
@@ -3172,10 +3173,10 @@ content: "\f068";
 }
 
 #producttab .hometab .etabs::before, #content .box .box-heading:before {
-    background: #e5e5e5 none repeat scroll 0 0;
+    background: #88bb22 none repeat scroll 0 0;
     content: "";
     font-family: fontawesome;
-    height: 1px;
+    height: 2px;
     left: 0;
     position: absolute;
     top: 47px;
@@ -3422,7 +3423,7 @@ content: "\f068";
     position: relative;
     width: 100%;
     padding: 0px;
-    margin: 0px;
+    margin: 0;
     list-style: none;
     overflow: hidden;
 }
@@ -3517,10 +3518,6 @@ content: "\f068";
     width: 252px;
     float: left;
     display: inline-block;
-}
-
-#producttab .box-product .product-items {
-    height: 390px;
 }
 
  #producttab .product-carousel .slider-item {
@@ -3635,7 +3632,10 @@ content: "\f068";
 #content .product-carousel .product-block:hover, #content .product-grid .product-block:hover, #content .box-product .product-block:hover, #producttab .box-product .product-block:hover {
     overflow: visible;
     clear: both;
-    border: 5px solid #c2e876;
+}
+
+#content .product-carousel .product-block:hover, #content .product-grid .product-block:hover, #producttab .box-product .product-block:hover {
+		border: 6px solid #d2e2aa;
 }
 
 .product-block:hover .saleicon.sale {
