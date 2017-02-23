@@ -21,15 +21,15 @@
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
       <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
+        <!-- <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title"><?php echo $text_checkout_option; ?></h4>
           </div>
           <div class="panel-collapse collapse" id="collapse-checkout-option">
             <div class="panel-body"></div>
           </div>
-        </div>
-        <?php if (!$logged && $account != 'guest') { ?>
+        </div> -->
+        <?php /* if (!$logged && $account != 'guest') { ?>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title"><?php echo $text_checkout_account; ?></h4>
@@ -38,7 +38,7 @@
             <div class="panel-body"></div>
           </div>
         </div>
-        <?php } else { ?>
+        <?php } else { */ ?>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title"><?php echo $text_checkout_payment_address; ?></h4>
@@ -47,7 +47,7 @@
             <div class="panel-body"></div>
           </div>
         </div>
-        <?php } ?>
+        <?php // } ?>
         <?php if ($shipping_required) { ?>
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -103,7 +103,7 @@ $(document).on('change', 'input[name=\'account\']', function() {
 	}
 });
 
-<?php if (!$logged) { ?>
+<?php /* if (!$logged) { ?>
 $(document).ready(function() {
     $.ajax({
         url: 'index.php?route=checkout/login',
@@ -120,7 +120,7 @@ $(document).ready(function() {
         }
     });
 });
-<?php } else { ?>
+<?php } else  */ ?>
 $(document).ready(function() {
     $.ajax({
         url: 'index.php?route=checkout/payment_address',
@@ -137,7 +137,7 @@ $(document).ready(function() {
         }
     });
 });
-<?php } ?>
+<?php //} ?>
 
 // Checkout
 $(document).delegate('#button-account', 'click', function() {
@@ -765,7 +765,7 @@ $(document).delegate('#button-payment-method', 'click', function() {
                 location = json['redirect'];
             } else if (json['error']) {
                 $('#button-payment-method').button('reset');
-                
+
                 if (json['error']['warning']) {
                     $('#collapse-payment-method .panel-body').prepend('<div class="alert alert-danger">' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                 }

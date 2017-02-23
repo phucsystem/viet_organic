@@ -277,7 +277,7 @@ ul.currency-menu {
 }
 
 header {
-    background: #fff;
+    background: #555555;
 }
 
 #wishlist-total>span::before {
@@ -477,7 +477,7 @@ header {
 }
 
 .nav-container {
-    margin: 10px auto 0;
+    margin: 0 auto 0;
     background: #88bb22 none repeat scroll 0 0;
     margin-bottom: 40px;
 }
@@ -503,7 +503,7 @@ header {
 }
 
 .phone>h4 {
-    color: #1a1a1a;
+    color: white;
     float: left;
     font-size: 16px;
     font-weight: 600;
@@ -531,6 +531,7 @@ header {
     font-size: 13px;
     margin-left: 65px;
     margin-top: -14px;
+    color: #ffffff;
 }
 
 .phone a:hover, .phone a:focus {
@@ -745,7 +746,7 @@ header .container {
 	font-weight: normal;
 	letter-spacing:0;
 	text-transform:capitalize;*/
-    color: #1a1a1a;
+    color: #ffffff;
     display: block;
     font-size: 13px;
     font-weight: normal;
@@ -810,6 +811,7 @@ span.account-toggle:after {
     padding: 0 0 3px 10px;
     position: relative;
     margin: 0;
+    color: #ffffff
 }
 
 .header-right.header-right-fixed #cart>.btn {
@@ -1717,7 +1719,7 @@ footer h5 {
 }
 
 .parallex {
-    background-color: #f2f2f2;
+    3background-color: #f2f2f2;
     background-image: url("../image/megnor/parallax.jpg");
     background-position: 50% 0;
     background-repeat: repeat;
@@ -2329,9 +2331,8 @@ h2.price {
     color: #000000;
     font-size: 20px;
     font-weight: 700;
-    padding-bottom: 15px;
     margin: 0;
-    display: inline-block;
+    display: block;
 }
 
 #column-left .product-thumb .price-new, #column-right .product-thumb .price-new {
@@ -2368,8 +2369,8 @@ h2.price {
     opacity: 0;
     overflow: auto;
     position: absolute;
-		width: 100%;
-		text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 #content .product-grid .product-thumb:hover .button-group, #content .product-carousel .product-thumb:hover .button-group, #content .box-product .product-thumb:hover .button-group, #producttab .box-product .product-thumb:hover .button-group {
@@ -3516,7 +3517,10 @@ content: "\f068";
     width: 252px;
     float: left;
     display: inline-block;
+}
 
+#producttab .box-product .product-items {
+    height: 390px;
 }
 
  #producttab .product-carousel .slider-item {
@@ -3631,6 +3635,7 @@ content: "\f068";
 #content .product-carousel .product-block:hover, #content .product-grid .product-block:hover, #content .box-product .product-block:hover, #producttab .box-product .product-block:hover {
     overflow: visible;
     clear: both;
+    border: 5px solid #c2e876;
 }
 
 .product-block:hover .saleicon.sale {

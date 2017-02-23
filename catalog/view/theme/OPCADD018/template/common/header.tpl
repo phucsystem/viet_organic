@@ -121,7 +121,7 @@
 		<li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><span class="hidden-xs hidden-sm hidden-md checkout_span"><?php echo $text_checkout; ?></span></a></li> -->
                 </div>
                 <div id="top-links" class="nav pull-right">
-                    <ul class="list-inline">
+                    <!-- <ul class="list-inline"> -->
                         <!-- <li class="dropdown myaccount">
                             <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"> <span class="account-toggle"><?php echo $text_account; ?></span></a>
                             <ul class="dropdown-menu dropdown-menu-right myaccount-menu">
@@ -178,7 +178,7 @@
                                 </li>
                             </ul>
                         </li> -->
-                    </ul>
+                    <!-- </ul> -->
                 </div>
             </div>
             <div class="lang-cur">
@@ -194,7 +194,7 @@
                 <div class="col-sm-4 header-logo">
                     <div id="logo">
                         <?php if ($logo) { ?>
-                        <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
+                        <a href="<?php echo $home; ?>"><img  style="width:250px" src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
                         <?php } else { ?>
                         <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
                         <?php } ?>

@@ -20,7 +20,7 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
   <?php } ?>
-  
+
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -101,15 +101,15 @@
           </table>
         </div>
       </form>
-      <?php if ($modules) { ?>
+      <?php /* if ($modules) { ?>
       <h3><?php echo $text_next; ?></h3>
-      <p><?php echo $text_next_choice; ?></p>
+      <!-- <p><?php echo $text_next_choice; ?></p> -->
       <div class="panel-group" id="accordion">
         <?php foreach ($modules as $module) { ?>
         <?php echo $module; ?>
         <?php } ?>
       </div>
-      <?php } ?>
+      <?php } */ ?>
       <br />
       <div class="row">
         <div class="col-sm-4 col-sm-offset-8">
@@ -130,4 +130,4 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>

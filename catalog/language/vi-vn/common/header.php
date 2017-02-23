@@ -23,4 +23,4 @@ $_['text_language'] = 'Ngôn ngữ';
 $_['text_currency'] = 'Tiền tệ';
 $_['text_all']           = 'Xem tất cả';
 $_['text_contact']          = 'Liên hệ';
-$_['text_about_us']          = 'Về VietOrganic shop';
+$_['text_about_us']          = 'Về VietOrganic';
