@@ -1,6 +1,8 @@
 <?php
 $find = '<head>';
-$replace = '<head><meta property="og:image" content="'.$thumb.'" />';
+$replace = '<head><meta property="og:image" content="'.$thumb.'" />
+    <meta property="og:title" content="'.$heading_title.'" />
+    <meta property="og:description" content="'. $heading_title .'" />';
     echo str_replace($find,$replace,$header); ?>
 <div class="container">
   <ul class="breadcrumb">

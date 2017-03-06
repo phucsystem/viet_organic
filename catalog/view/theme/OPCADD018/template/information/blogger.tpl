@@ -1,4 +1,11 @@
-<?php echo $header; ?>
+<?php
+$find = '<head>';
+$replace = '<head><meta property="og:title" content="'.$heading_title.'" />';
+if ($blogs['image']) {
+  $replace .= '<meta property="og:image" content="'.$blogs['image'].'"/>';
+}
+
+  echo str_replace($find,$replace,$header); ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -14,8 +21,12 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?> single-blog"><?php echo $content_top; ?>
-     
+     <br>
 	     <h1 class="page-title"><?php echo $heading_title; ?></h1>
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
+      <!-- AddThis Button END -->
 		 
       <?php if ($blogs['image']) { ?>
 	  		<div class="blog-img">
