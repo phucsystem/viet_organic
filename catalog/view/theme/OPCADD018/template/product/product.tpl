@@ -1,4 +1,7 @@
-<?php echo $header; ?>
+<?php
+$find = '<head>';
+$replace = '<head><meta property="og:image" content="'.$thumb.'" />';
+    echo str_replace($find,$replace,$header); ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
